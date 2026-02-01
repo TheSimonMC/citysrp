@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>CitysRP Links</title>
+  <meta name="description" content="CitysRP – schnelle Links: Discord, Imposter, Regeln, Bewerbung, Map." />
+  <style>
+    :root{
+      --bg0:#0b0f1a;
+      --bg1:#0f1630;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --txt:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --line:rgba(255,255,255,.12);
+      --shadow: 0 12px 40px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --pad: 18px;
+      --accent1:#7c3aed;
+      --accent2:#22c55e;
+      --accent3:#38bdf8;
+      --accent4:#f97316;
+      --accent5:#f43f5e;
+      --focus: 0 0 0 3px rgba(56,189,248,.35);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--txt);
+      background:
+        radial-gradient(900px 500px at 20% 0%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(800px 500px at 90% 20%, rgba(34,197,94,.22), transparent 55%),
+        radial-gradient(700px 420px at 30% 100%, rgba(56,189,248,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: 1080px; margin: 0 auto; padding: 28px 18px 60px; }
+
+    header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 16px;
+      margin: 8px 0 18px;
+    }
+
+    .brand{
+      display:flex; gap:14px; align-items:center;
+      padding: 14px 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%),
+                  linear-gradient(135deg, var(--accent1), var(--accent3));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+      flex: 0 0 auto;
+    }
+    .title{ line-height:1.1; }
+    .title h1{ margin:0; font-size: 18px; letter-spacing: .2px; }
+    .title p{ margin:6px 0 0; color:var(--muted); font-size: 13px; }
+
+    .tools{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 10px 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      cursor:pointer;
+      user-select:none;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18); }
+    .pill:focus{ outline:none; box-shadow: var(--shadow), var(--focus); }
+
+    .small{ font-size: 13px; color: var(--muted); }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+      margin: 14px 0 18px;
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .panel:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 220px at 20% 0%, rgba(124,58,237,.22), transparent 60%),
+                  radial-gradient(520px 220px at 80% 40%, rgba(56,189,248,.18), transparent 60%);
+      pointer-events:none;
+    }
+    .panel > *{ position:relative; }
+
+    .panel h2{ margin:0 0 8px; font-size: 22px; letter-spacing:.2px; }
+    .panel p{ margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
+
+    .quick{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px;
+    }
+
+    .btn{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      padding: 10px 12px;
+      display:inline-flex; align-items:center; gap:10px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+      font-weight: 650;
+      font-size: 13px;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.20); }
+    .btn:focus{ outline:none; box-shadow: var(--focus); }
+
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: var(--accent3);
+      box-shadow: 0 0 0 3px rgba(56,189,248,.18);
+      flex: 0 0 auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.30);
+      backdrop-filter: blur(10px);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      cursor:pointer;
+      position:relative;
+      overflow:hidden;
+      min-height: 118px;
+    }
+
+    .card:hover{ transform: translateY(-2px); background: var(--card2); border-color: rgba(255,255,255,.18); }
+    .card:focus{ outline:none; box-shadow: var(--shadow), var(--focus); }
+
+    .card .top{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom: 10px;
+    }
+
+    .badge{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      color: rgba(255,255,255,.85);
+      white-space:nowrap;
+    }
+
+    .card h3{ margin:0; font-size: 16px; }
+    .card p{ margin:8px 0 0; color: var(--muted); font-size: 13px; line-height:1.45; }
+
+    .hint{
+      margin-top: 14px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.55;
+    }
+
+    footer{
+      margin-top: 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+    }
+
+    .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 560px){
+      .grid{ grid-template-columns: 1fr; }
+      header{ flex-direction:column; align-items:stretch; }
+      .tools{ justify-content:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" role="banner">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title">
+          <h1>CitysRP</h1>
+          <p>Quicklinks & Weiterleitungen – alles an einem Ort.</p>
+        </div>
+      </div>
+
+      <div class="tools">
+        <button class="pill" id="copyMc" type="button" title="Minecraft-Adresse kopieren">
+          <span class="dot" style="background:var(--accent2)"></span>
+          <span><strong>MC:</strong> <span class="mono">citysrp.de</span></span>
+        </button>
+        <button class="pill" id="copyWeb" type="button" title="Website-Adresse kopieren">
+          <span class="dot"></span>
+          <span><strong>Web:</strong> <span class="mono">www.citysrp.de</span></span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="panel">
+        <h2>Willkommen 👋</h2>
+        <p>
+          Hier findest du alle wichtigen Links. Klick einfach auf eine Karte – du wirst automatisch weitergeleitet.
+          Für Minecraft kannst du direkt <span class="mono">citysrp.de</span> nutzen.
+        </p>
+
+        <div class="quick" id="quickActions"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Status</h2>
+        <p class="small" id="statusText">Bereit. Links werden geladen…</p>
+        <div class="hint" id="statusHint">
+          Tipp: Für /discord & /imposter legst du im Repo Ordner an (z.B. <span class="mono">/discord/index.html</span>).
+          Diese Startseite kann aber auch direkt externe Links öffnen.
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" id="cards" aria-label="Links"></section>
+
+    <footer>
+      <span>© <span id="year"></span> CitysRP</span>
+      <span class="mono" id="toast" aria-live="polite"></span>
+    </footer>
+  </div>
+
+  <script>
+    // =========================
+    // 1) HIER DEINE LINKS EINTRAGEN
+    // =========================
+    // Du kannst entweder:
+    // - "internal": true  -> leitet auf www.citysrp.de/<path> (dein Repo) weiter
+    // - "url": "https://..." -> leitet direkt extern weiter
+    const LINKS = [
+      {
+        title: "Discord",
+        badge: "Community",
+        desc: "Join unserem Discord – News, Support, Team.",
+        // Option A: intern (du erstellst /discord/index.html im Repo)
+        internal: true,
+        path: "discord",
+        accent: "var(--accent3)"
+        // Option B: direkt extern (statt internal/path):
+        // url: "https://discord.gg/DEININVITE"
+      },
+      {
+        title: "Imposter Game",
+        badge: "Game",
+        desc: "Zum Imposter-Minispiel (GitHub Pages).",
+        // Du kannst hier direkt auf ein anderes GitHub Pages Projekt weiterleiten:
+        url: "https://thesimonmc.github.io/IMPOSTER-REPO",
+        accent: "var(--accent1)"
+      },
+      {
+        title: "Regeln",
+        badge: "Wichtig",
+        desc: "Serverregeln & RP-Regeln.",
+        internal: true,
+        path: "rules",
+        accent: "var(--accent2)"
+      },
+      {
+        title: "Bewerbung",
+        badge: "Apply",
+        desc: "Whitelist/Bewerbung – Formular oder Infos.",
+        internal: true,
+        path: "apply",
+        accent: "var(--accent4)"
+      },
+      {
+        title: "Map / Dynmap",
+        badge: "Map",
+        desc: "Online-Karte (falls vorhanden).",
+        // Wenn du eine Dynmap hast, trag hier die URL ein:
+        url: "http://citysrp.de:8123/",
+        accent: "var(--accent5)"
+      },
+      {
+        title: "Ko-fi",
+        badge: "Support",
+        desc: "Wenn du das Projekt unterstützen willst.",
+        url: "https://ko-fi.com/",
+        accent: "var(--accent3)"
+      }
+    ];
+
+    // =========================
+    // 2) HELFER
+    // =========================
+    const elCards = document.getElementById("cards");
+    const elQuick = document.getElementById("quickActions");
+    const toast = document.getElementById("toast");
+    const statusText = document.getElementById("statusText");
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function showToast(msg){
+      toast.textContent = msg;
+      setTimeout(() => { if (toast.textContent === msg) toast.textContent = ""; }, 2200);
+    }
+
+    function resolveUrl(item){
+      if (item.url) return item.url;
+      if (item.internal && item.path) return `/${item.path.replace(/^\/+/,"")}/`;
+      return "#";
+    }
+
+    async function copyToClipboard(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        showToast("Kopiert ✅");
+      }catch{
+        showToast("Konnte nicht kopieren ❌");
+      }
+    }
+
+    // =========================
+    // 3) UI BAUEN
+    // =========================
+    function makeButton(label, onClick){
+      const b = document.createElement("button");
+      b.className = "btn";
+      b.type = "button";
+      b.innerHTML = `<span class="dot"></span><span>${label}</span>`;
+      b.addEventListener("click", onClick);
+      return b & b; // (nur um Linter zu beruhigen – wird von Browsern ignoriert)
+    }
+
+    // Quick actions
+    const quick = [
+      { label: "Discord", go: "/discord/" },
+      { label: "Imposter", go: "/imposter/" }, // wenn du intern weiterleitest
+      { label: "Regeln", go: "/rules/" }
+    ];
+
+    quick.forEach(q => {
+      const btn = document.createElement("button");
+      btn.className = "btn";
+      btn.type = "button";
+      btn.innerHTML = `<span class="dot"></span><span>${q.label}</span>`;
+      btn.addEventListener("click", () => location.href = q.go);
+      elQuick.appendChild(btn);
+    });
+
+    // Cards
+    LINKS.forEach(item => {
+      const url = resolveUrl(item);
+
+      const card = document.createElement("a");
+      card.className = "card";
+      card.href = url;
+      card.tabIndex = 0;
+      card.setAttribute("role", "link");
+      card.style.borderColor = "rgba(255,255,255,.12)";
+
+      const accent = item.accent || "var(--accent3)";
+      card.innerHTML = `
+        <div class="top">
+          <h3>${item.title}</h3>
+          <span class="badge" style="border-color: rgba(255,255,255,.16);">
+            ${item.badge || "Link"}
+          </span>
+        </div>
+        <p>${item.desc || ""}</p>
+        <div style="margin-top:12px; display:flex; align-items:center; gap:10px;">
+          <span class="dot" style="background:${accent}; box-shadow: 0 0 0 3px rgba(255,255,255,.10)"></span>
+          <span class="small mono">${url}</span>
+        </div>
+      `;
+
+      // Optional: externe Links in neuem Tab
+      if (item.url && /^https?:\/\//i.test(item.url)) {
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      }
+
+      elCards.appendChild(card);
+    });
+
+    // Status
+    statusText.textContent = "Bereit ✅ Klicke eine Karte, um weitergeleitet zu werden.";
+
+    // Copy buttons (oben rechts)
+    document.getElementById("copyMc").addEventListener("click", () => copyToClipboard("citysrp.de"));
+    document.getElementById("copyWeb").addEventListener("click", () => copyToClipboard("www.citysrp.de"));
+  </script>
+</body>
+</html>
