@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CitysRP – Regeln</title>
+
+  <style>
+    :root{
+      --bg0:#0b0f1a;
+      --bg1:#0f1630;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.09);
+      --txt:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --line:rgba(255,255,255,.12);
+      --radius:18px;
+      --accent:#38bdf8;
+      --accent2:#7c3aed;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--txt);
+      background:
+        radial-gradient(800px 400px at 20% 0%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(700px 400px at 90% 20%, rgba(56,189,248,.25), transparent 60%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
+    }
+
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:28px 18px 60px;
+    }
+
+    header{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      border-radius:999px;
+      padding:10px 14px;
+      color:var(--txt);
+      cursor:pointer;
+      font-weight:600;
+      transition:.15s;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .btn:hover{
+      background:rgba(255,255,255,.1);
+      transform:translateY(-1px);
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:0 15px 40px rgba(0,0,0,.4);
+      backdrop-filter:blur(10px);
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:28px;
+    }
+
+    p{
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .rules{
+      margin-top:18px;
+      display:grid;
+      gap:14px;
+    }
+
+    .rule{
+      background:var(--card2);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+    }
+
+    .rule h3{
+      margin:0 0 6px;
+      font-size:16px;
+      color:var(--accent);
+    }
+
+    footer{
+      margin-top:22px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .mono{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- Header / Navigation -->
+    <header>
+      <a class="btn" href="/">⬅ Zurück</a>
+      <a class="btn" href="/discord">💬 Discord</a>
+      <button class="btn" onclick="copyIp()">🎮 MC: citysrp.de</button>
+    </header>
+
+    <!-- Content -->
+    <section class="card">
+      <h1>📜 CitysRP Regeln</h1>
+      <p>
+        Hier findest du die wichtigsten Regeln für CitysRP.
+        Diese Seite kann jederzeit erweitert oder angepasst werden.
+      </p>
+
+      <div class="rules">
+
+        <div class="rule">
+          <h3>1. Respekt</h3>
+          <p>
+            Behandle andere Spieler respektvoll. Beleidigungen, Diskriminierung
+            oder Provokationen sind verboten.
+          </p>
+        </div>
+
+        <div class="rule">
+          <h3>2. Roleplay-Pflicht</h3>
+          <p>
+            FailRP, PowerRP, MetaRP und RDM sind untersagt.
+            Handle immer realistisch und situationsangepasst.
+          </p>
+        </div>
+
+        <div class="rule">
+          <h3>3. Kein OOC im RP</h3>
+          <p>
+            OOC-Talk, Discord-Hinweise oder Meta-Infos im RP sind verboten.
+          </p>
+        </div>
+
+        <div class="rule">
+          <h3>4. Teamentscheidungen</h3>
+          <p>
+            Anweisungen des Serverteams sind zu befolgen.
+            Diskussionen werden außerhalb des RP geklärt.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> CitysRP · <span class="mono">www.citysrp.de</span>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function copyIp(){
+      navigator.clipboard.writeText("citysrp.de");
+      alert("Minecraft-IP kopiert: citysrp.de");
+    }
+  </script>
+</body>
+</html>
